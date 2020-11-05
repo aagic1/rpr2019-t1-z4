@@ -19,7 +19,7 @@ public class Korpa {
 }
 
     public Artikl[] getArtikli() {
-        return artikli.toArray(new Artikl[0]);
+        return artikli.toArray(new Artikl[artikli.size()]);
     }
 
     public Artikl izbaciArtiklSaKodom(String kod) {
