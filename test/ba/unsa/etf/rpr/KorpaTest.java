@@ -17,7 +17,7 @@ class KorpaTest {
     }
 
     @Test
-    public void dodajUSupermarket() {
+    public void dodajUKorpu() {
         Korpa k = new Korpa();
         boolean jeDodan = k.dodajArtikl(new Artikl("sok", 1, "234"));
         assertTrue(jeDodan);
@@ -43,4 +43,11 @@ class KorpaTest {
         assertEquals(new Artikl("nesto", 10, Integer.toString(2)), izbaceni);
     }
 
+    @Test
+    public void ukupnaCijena() {
+        Korpa k = new Korpa();
+        for(int i = 0; i < 3; i++)
+            k.dodajArtikl(new Artikl("nesto", 10, Integer.toString(i)));
+        assertEquals(30, k.dajUkupnuCijenuArtikala());
+    }
 }
